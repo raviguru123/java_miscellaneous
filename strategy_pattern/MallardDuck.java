@@ -1,7 +1,6 @@
 public class MallardDuck extends Duck {
 	MallardDuck() {
 		flybehavior = new FlyNoWays();
-			
 		quackbehavior  = new MuteQuack();
 	}
 
