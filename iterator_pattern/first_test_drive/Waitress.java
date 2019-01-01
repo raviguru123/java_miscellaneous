@@ -1,19 +1,18 @@
 import java.util.Iterator;
-
+import java.util.*;
 public class Waitress {
-	DinnerMenu dinnnermenu;
-	PancakeHouseMenu pancakehousemenu;
-	public Waitress(DinnerMenu dinnnermenu, PancakeHouseMenu pancakehousemenu) {
-		this.dinnnermenu = dinnnermenu;
-		this.pancakehousemenu = pancakehousemenu;
+	ArrayList<Menu> menues;
+	public Waitress(ArrayList<Menu> menues) {
+		this.menues = menues;
 	}
 
 	public void printMenu() {
-		System.out.println("*************DINNER MENU ITEMS*****************");
-		this.printMenu(this.dinnnermenu.createDinnerMenuIterator());
-		System.out.println();
-		System.out.println("*************PANCAKE HOUSE MENU ITEMS********************");
-		this.printMenu(this.pancakehousemenu.panCakeHouseIterator());
+		Iterator menueIterator = this.menues.iterator();
+		while(menueIterator.hasNext()) {
+			Menu menu = (Menu) menueIterator.next();
+			this.printMenu(menu.createIterator());
+			System.out.println("************************************");
+		}
 	}
 
 	private void printMenu(Iterator itr) {
@@ -22,7 +21,6 @@ public class Waitress {
 			System.out.print("Name :"+ menuitem.getName()+"; ");
 			System.out.print(" Price :"+ menuitem.getPrice()+"; ");
 			System.out.println(" description :"+ menuitem.getDescription());
-			//System.out.print("vegetarian :"+ menuitem.isVegetraian());
 		}
 	}
 }

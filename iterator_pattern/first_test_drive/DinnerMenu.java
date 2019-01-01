@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.*;
 import java.util.Iterator;
-public class DinnerMenu {
+public class DinnerMenu implements Menu{
 	ArrayList<MenuItem> menuitems;
 	public DinnerMenu() {
 		this.menuitems = new ArrayList<MenuItem>();
@@ -17,8 +17,7 @@ public class DinnerMenu {
 		this.menuitems.add(item);
 	}
 
-	public Iterator createDinnerMenuIterator() {
-		ArrayList<String> al = new ArrayList<String>();
+	public Iterator createIterator() {
 		Iterator<MenuItem> itr = this.menuitems.iterator();
 		return itr;
 	}

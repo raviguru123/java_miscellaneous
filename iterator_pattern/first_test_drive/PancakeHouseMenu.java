@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu {
 	MenuItem[] menuitems;
 	static final int MAX_SIZE = 6;
 	int numberOfItem = 0;
@@ -23,7 +23,7 @@ public class PancakeHouseMenu {
 		}
 	}
 
-	public Iterator panCakeHouseIterator(){
+	public Iterator createIterator(){
 		return new PancakeHouseIterator(this.menuitems);
 	}
 

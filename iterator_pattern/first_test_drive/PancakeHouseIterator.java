@@ -9,7 +9,6 @@ public class PancakeHouseIterator implements Iterator {
 	}
 
 	public boolean hasNext() {
-		//System.out.println("JAVA::::"+Integer.toString(this.index) + " Length of array::"+Integer.toString(this.menuitems.length));
 		if(this.index < this.menuitems.length && this.menuitems[index] != null) {
 			return true;
 		}
@@ -17,9 +16,12 @@ public class PancakeHouseIterator implements Iterator {
 	}
 
 	public Object next() {
-		//System.out.println("this.index"+Integer.toString(this.index));
 		this.index += 1;
 		return this.menuitems[this.index - 1];
+	}
+
+	public void remove() {
+		
 	}
 
 }
